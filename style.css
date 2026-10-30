@@ -416,6 +416,12 @@ html, body {
 @keyframes catbob { from { transform: translateY(0); } to { transform: translateY(-2.5px); } }
 .cat .cat-tail { transform-origin: 12px 26px; }
 .cat.walking .cat-tail { animation: tailwag .5s ease-in-out infinite alternate; }
+/* Bella's legs: far pair steps opposite the near pair while she walks;
+   napping tucks them away so the loaf pose still reads. */
+.cat.walking .leg-near { animation: legstep .34s ease-in-out infinite alternate; }
+.cat.walking .leg-far { animation: legstep .34s ease-in-out infinite alternate-reverse; }
+@keyframes legstep { from { transform: translateX(-.7px); } to { transform: translateX(.7px); } }
+.cat.napping .cat-legs { opacity: 0; }
 @keyframes tailwag { from { transform: rotate(-7deg); } to { transform: rotate(9deg); } }
 .cat.napping svg { transform: scaleY(.72) translateY(20%); }
 .cat-shadow { width: 62%; height: 6px; margin: 1px auto 0; border-radius: 50%; background: rgba(0,0,0,.45); }

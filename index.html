@@ -153,33 +153,39 @@
 
       <!-- ======= Walls (drawn over floors, under furniture tops) ======= -->
       <div class="walls">
+        <!-- Wall grid (alignment pass): every interior line uses ONE canonical
+             block, far edge flush with the floor boundary, thickness .9% —
+             verticals x: V1 35.6–36.5, V2 66.6–67.5, V3 15.6–16.5;
+             horizontals y: H1 39.6–40.5, H2 41.6–42.5, H3 45.1–46,
+             H4 67.6–68.5, H5 75.1–76. Segments span the full junction
+             blocks and run flush to the exterior border. -->
         <!-- study east, gap y20–28 -->
-        <div class="wall wv" style="left:35.6%; top:3%;  width:.9%; height:17%;"></div>
-        <div class="wall wv" style="left:35.6%; top:28%; width:.9%; height:14%;"></div>
+        <div class="wall wv" style="left:35.6%; top:0%;  width:.9%; height:20%;"></div>
+        <div class="wall wv" style="left:35.6%; top:28%; width:.9%; height:14.5%;"></div>
         <!-- study south, gap x22–30 -->
-        <div class="wall wh" style="left:2%;  top:41.6%; width:20%; height:.9%;"></div>
-        <div class="wall wh" style="left:30%; top:41.6%; width:6%;  height:.9%;"></div>
+        <div class="wall wh" style="left:0%;  top:41.6%; width:22%; height:.9%;"></div>
+        <div class="wall wh" style="left:30%; top:41.6%; width:6.5%;  height:.9%;"></div>
         <!-- observatory west, gap y16–24 -->
-        <div class="wall wv" style="left:67.6%; top:3%;  width:.9%; height:13%;"></div>
-        <div class="wall wv" style="left:67.6%; top:24%; width:.9%; height:16%;"></div>
-        <!-- divider y40: observatory south + hall/lounge, opening x46–64 -->
-        <div class="wall wh" style="left:68%; top:39.6%; width:30%; height:.9%;"></div>
-        <div class="wall wh" style="left:36%; top:39.6%; width:10%; height:.9%;"></div>
-        <div class="wall wh" style="left:64%; top:39.6%; width:4%;  height:.9%;"></div>
+        <div class="wall wv" style="left:66.6%; top:0%;  width:.9%; height:16%;"></div>
+        <div class="wall wv" style="left:66.6%; top:24%; width:.9%; height:16.5%;"></div>
+        <!-- divider (line y40.5): observatory south + hall/lounge, opening x46–64 -->
+        <div class="wall wh" style="left:66.6%; top:39.6%; width:33.4%; height:.9%;"></div>
+        <div class="wall wh" style="left:35.6%; top:39.6%; width:10.4%; height:.9%;"></div>
+        <div class="wall wh" style="left:64%; top:39.6%; width:3.5%;  height:.9%;"></div>
         <!-- kitchen north, gap x22–30 -->
-        <div class="wall wh" style="left:2%;  top:45.6%; width:20%; height:.9%;"></div>
-        <div class="wall wh" style="left:30%; top:45.6%; width:6%;  height:.9%;"></div>
+        <div class="wall wh" style="left:0%;  top:45.1%; width:22%; height:.9%;"></div>
+        <div class="wall wh" style="left:30%; top:45.1%; width:6.5%;  height:.9%;"></div>
         <!-- kitchen east (also entry west below), gap y66–74 -->
         <div class="wall wv" style="left:35.6%; top:46%; width:.9%; height:20%;"></div>
-        <div class="wall wv" style="left:35.6%; top:74%; width:.9%; height:23%;"></div>
+        <div class="wall wv" style="left:35.6%; top:74%; width:.9%; height:26%;"></div>
         <!-- server closet east, gap y53–61 -->
         <div class="wall wv" style="left:15.6%; top:46%; width:.9%; height:7%;"></div>
-        <div class="wall wv" style="left:15.6%; top:61%; width:.9%; height:7%;"></div>
+        <div class="wall wv" style="left:15.6%; top:61%; width:.9%; height:7.5%;"></div>
         <!-- server closet south -->
-        <div class="wall wh" style="left:2%; top:67.6%; width:14%; height:.9%;"></div>
+        <div class="wall wh" style="left:0%; top:67.6%; width:16.5%; height:.9%;"></div>
         <!-- entry north, opening x44–60 -->
-        <div class="wall wh" style="left:37%; top:75.6%; width:7%; height:.9%;"></div>
-        <div class="wall wh" style="left:60%; top:75.6%; width:6%; height:.9%;"></div>
+        <div class="wall wh" style="left:35.6%; top:75.1%; width:8.4%; height:.9%;"></div>
+        <div class="wall wh" style="left:60%; top:75.1%; width:6.5%; height:.9%;"></div>
       </div>
 
       <!-- Station floor markers -->
@@ -198,6 +204,20 @@
       <!-- Bella the cat -->
       <div class="cat" id="cat">
         <svg viewBox="0 0 64 44" aria-label="Bella, the orange cat">
+          <g class="cat-legs">
+            <g class="leg-far">
+              <rect x="19.5" y="29" width="4.2" height="12.5" rx="2" fill="#b96a1f"/>
+              <ellipse cx="21.6" cy="41.8" rx="3.2" ry="1.7" fill="#b96a1f"/>
+              <rect x="40.5" y="29" width="4.2" height="12.5" rx="2" fill="#b96a1f"/>
+              <ellipse cx="42.6" cy="41.8" rx="3.2" ry="1.7" fill="#b96a1f"/>
+            </g>
+            <g class="leg-near">
+              <rect x="13.5" y="29" width="4.2" height="12.5" rx="2" fill="#d9822b"/>
+              <ellipse cx="15.6" cy="41.8" rx="3.2" ry="1.7" fill="#e8973f"/>
+              <rect x="34.5" y="29" width="4.2" height="12.5" rx="2" fill="#d9822b"/>
+              <ellipse cx="36.6" cy="41.8" rx="3.2" ry="1.7" fill="#e8973f"/>
+            </g>
+          </g>
           <ellipse class="cat-body" cx="30" cy="28" rx="19" ry="10" fill="#d9822b"/>
           <ellipse cx="30" cy="30" rx="15" ry="7.5" fill="#e8973f"/>
           <circle cx="49" cy="20" r="9" fill="#e8973f"/>
