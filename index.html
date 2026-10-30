@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musehome — Eternal's Workspace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">✦</div>
+    <div>
+      <h1>Musehome</h1>
+      <p class="brand-sub">Eternal's workspace &middot; <span id="day-label">Friday, October 30, 2026</span> &middot; America/Toronto</p>
+    </div>
+  </div>
+  <div class="clockbox">
+    <div class="clock" id="clock">--:--</div>
+    <div class="clock-state" id="clock-state">paused</div>
+  </div>
+  <div class="controls">
+    <button id="btn-play" class="btn primary" type="button">▶ Play the day</button>
+    <label class="speed-wrap">Speed
+      <select id="speed">
+        <option value="1">1 min / sec</option>
+        <option value="5">5 min / sec</option>
+        <option value="10" selected>10 min / sec</option>
+        <option value="30">30 min / sec</option>
+      </select>
+    </label>
+    <button id="btn-now" class="btn" type="button">⟲ Jump to now</button>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="room-wrap">
+    <div class="room" id="room">
+      <div class="floor-grid"></div>
+      <div class="rug"></div>
+
+      <!-- Stations -->
+      <div class="station st-bed" data-station="bed">
+        <div class="st-icon">🛏️</div>
+        <div class="st-name">Hammock</div>
+        <div class="st-sub">idle / overnight</div>
+        <div class="hammock"></div>
+      </div>
+
+      <div class="station st-library" data-station="library">
+        <div class="st-icon">📚</div>
+        <div class="st-name">Library</div>
+        <div class="st-sub">case briefs · vault</div>
+        <div class="shelves"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="station st-desk" data-station="desk">
+        <div class="st-icon">🎙️</div>
+        <div class="st-name">Desk</div>
+        <div class="st-sub">briefings · podcast studio</div>
+        <div class="desk-top"><i class="monitor"></i><i class="mic"></i></div>
+      </div>
+
+      <div class="station st-wall" data-station="wall">
+        <div class="st-icon">🖥️</div>
+        <div class="st-name">Wall Screen</div>
+        <div class="st-sub">tb-dash</div>
+        <div class="wall-screen">
+          <div class="ws-row"><b>08:30</b> Bail hearing</div>
+          <div class="ws-row"><b>11:40</b> Colten pickup</div>
+          <div class="ws-row"><b>13:30</b> PD2634 ✈</div>
+        </div>
+      </div>
+
+      <div class="station st-server" data-station="server">
+        <div class="st-icon">🗄️</div>
+        <div class="st-name">Server Rack</div>
+        <div class="st-sub">homelab · Uptime Kuma</div>
+        <div class="rack"><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="station st-kitchen" data-station="kitchen">
+        <div class="st-icon">🍳</div>
+        <div class="st-name">Kitchen Nook</div>
+        <div class="st-sub">food journal · dinner plans</div>
+        <div class="stove"><i></i><i></i></div>
+      </div>
+
+      <div class="station st-door" data-station="door">
+        <div class="st-icon">🚪</div>
+        <div class="st-name">Door</div>
+        <div class="st-sub">out with Tariel</div>
+        <div class="door-frame"></div>
+      </div>
+
+      <div class="station st-window" data-station="window">
+        <div class="st-icon">🔭</div>
+        <div class="st-name">Window</div>
+        <div class="st-sub">weather · flight watching</div>
+        <div class="window-view"><i class="star s1"></i><i class="star s2"></i><i class="star s3"></i><i class="moon"></i></div>
+      </div>
+
+      <!-- The character -->
+      <div class="character" id="character">
+        <div class="bubble" id="bubble">…</div>
+        <svg class="figure" viewBox="0 0 60 96" aria-label="Eternal — translucent gold-outlined figure filled with nebula and stars">
+          <defs>
+            <radialGradient id="nebula" cx="50%" cy="32%" r="80%">
+              <stop offset="0%" stop-color="#3b2f6e"/>
+              <stop offset="45%" stop-color="#1d2150"/>
+              <stop offset="100%" stop-color="#0d1030"/>
+            </radialGradient>
+          </defs>
+          <path class="body" d="M30 4 C38 4 43 10 43 18 C43 23 41 27 38 30 C46 34 52 44 54 58 L56 90 L42 90 L38 62 L36 90 L22 90 L20 62 L16 90 L4 90 L6 58 C8 44 14 34 22 30 C19 27 17 23 17 18 C17 10 22 4 30 4 Z"
+                fill="url(#nebula)" stroke="#e9c767" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="24" cy="40" r="1.4" fill="#ffffff" opacity="0.9"/>
+          <circle cx="38" cy="52" r="1.1" fill="#ffd98a" opacity="0.9"/>
+          <circle cx="29" cy="66" r="1.3" fill="#cdb9ff" opacity="0.9"/>
+          <circle cx="44" cy="72" r="1.0" fill="#ffffff" opacity="0.8"/>
+          <circle cx="18" cy="76" r="1.1" fill="#ffd98a" opacity="0.8"/>
+          <circle cx="34" cy="34" r="1.0" fill="#ffffff" opacity="0.7"/>
+          <path class="eye" d="M24 14 l1.6 3.4 3.4 1.6 -3.4 1.6 -1.6 3.4 -1.6 -3.4 -3.4 -1.6 3.4 -1.6 Z" fill="#ffe9a8"/>
+          <path class="eye" d="M36 14 l1.6 3.4 3.4 1.6 -3.4 1.6 -1.6 3.4 -1.6 -3.4 -3.4 -1.6 3.4 -1.6 Z" fill="#ffe9a8"/>
+        </svg>
+        <div class="shadow"></div>
+      </div>
+    </div>
+    <p class="room-hint">He walks between stations as the day plays. Click any log entry to jump him there.</p>
+  </section>
+
+  <aside class="log-panel">
+    <h2>Today's log</h2>
+    <p class="log-sub" id="log-sub">What Eternal actually got up to.</p>
+    <ol class="log" id="log"></ol>
+    <div class="now-card" id="now-card">
+      <div class="now-label">Right now</div>
+      <div class="now-text" id="now-text">—</div>
+    </div>
+  </aside>
+</main>
+
+<footer class="foot">
+  <span>Musehome · a toy window into the Alfred/Eternal workday · data: <code>activities.json</code></span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
