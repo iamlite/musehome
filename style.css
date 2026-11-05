@@ -19,7 +19,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(1200px 700px at 70% -10%, #181d42 0%, var(--bg) 55%) fixed, var(--bg);
+  background: var(--bg);
   color: var(--ink);
   font-family: "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
@@ -47,7 +47,8 @@ html, body {
   padding: 9px 14px; font-size: 14px; cursor: pointer;
 }
 .btn:hover { border-color: var(--gold-deep); }
-.btn.primary { background: linear-gradient(180deg, #f2d47e, var(--gold)); color: #241a04; font-weight: 700; border-color: var(--gold-deep); }
+.btn.primary { background: var(--gold); color: #241a04; font-weight: 700; border-color: var(--gold-deep); }
+.btn.primary:hover { background: var(--gold-hi); }
 .speed-wrap { font-size: 13px; color: var(--ink-dim); display: flex; align-items: center; gap: 6px; }
 .speed-wrap select { background: var(--panel-2); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px; font-size: 13px; }
 
@@ -93,7 +94,7 @@ html, body {
 .room-label {
   position: absolute; z-index: 3;
   font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
-  color: rgba(232,230,218,.34); pointer-events: none;
+  color: rgba(232,230,218,.58); pointer-events: none;
 }
 .rl-study  { left: 3%;  top: 39%; }
 .rl-hall   { left: 48.5%; top: 4.5%; }
@@ -512,4 +513,28 @@ html, body {
   .log-panel { flex: none; max-height: none; }
   .clockbox { margin-left: 0; }
   .plan { min-height: 380px; }
+}
+
+/* ---------- Focus, reduced motion, small screens (polish pass) ---------- */
+
+.btn:focus-visible, .speed-wrap select:focus-visible, .log li:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+::selection { background: var(--gold); color: #241a04; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan { min-height: 300px; }
+  .topbar { padding: 12px 16px; gap: 14px; }
+  .layout { padding: 14px 14px 4px; }
+  .clock { font-size: 28px; }
 }

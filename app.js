@@ -345,6 +345,12 @@ function buildLog() {
     lst.textContent = (STATIONS[a.station] || {}).name || a.station;
     lx.appendChild(lst);
     li.appendChild(lt); li.appendChild(lx);
+    li.tabIndex = 0;
+    li.setAttribute("role", "button");
+    li.setAttribute("aria-label", a.time + " — " + a.text);
+    li.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); li.click(); }
+    });
     li.addEventListener("click", () => {
       playing = false;
       $("btn-play").textContent = "▶ Play the day";
