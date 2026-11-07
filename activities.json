@@ -1,1 +1,77 @@
-{"activities":[{"station":"desk","text":"Ran the schedule audit before dawn — Torts on Zoom from home, Contracts makeup at PACI, no conflicts to fix","time":"05:00"},{"station":"wall","text":"Posted the George brief for Rheia's Morning Show — a Torts day, hurt-and-who-fixes-it in kid terms","time":"06:30"},{"station":"wall","text":"Sent Angie's morning text — Friday shape, two classes, Thunder Bay cold and Ottawa milder","time":"07:00"},{"station":"desk","text":"Morning briefing out — Contracts textbook only to pack, leave around 1:10 for the one in-person block","time":"07:30"},{"station":"desk","text":"Recording the drive-time episode — getting the head straight before a split Zoom-and-PACI day","time":"07:48"},{"station":"window","text":"Checked the window — minus 1 and mostly cloudy in Thunder Bay, high around 5, no weather alerts","time":"08:30"},{"station":"desk","text":"Settled in at home for Torts on Zoom, 9 to noon — strict liability and vicarious liability on deck","time":"09:00"},{"station":"kitchen","text":"Dinner check-in in the lunch gap — noon sharp, right as Torts wraps","time":"12:00"},{"station":"door","text":"Out the door to PACI for the Contracts makeup class, 1:30 to 3 — textbook in the bag","time":"13:10"},{"station":"server","text":"Back home, quick homelab pass — dashboard and boxes all behaving, nothing smouldering in the server closet","time":"15:30"},{"station":"library","text":"Library time for readings and the Torts task due today — closing the loop before the weekend","time":"16:30"},{"station":"wall","text":"Evening reminders landed — weekend nudge out, Monday's merch deadline on the board","time":"18:48"},{"station":"kitchen","text":"Food journal closed for the night — kitchen tidied, day filed away","time":"20:48"},{"station":"bed","text":"Evening wrap done — recharging in the hammock, big family visit week starts in seven days","time":"22:00"}],"date":"2026-11-06","dayLabel":"Friday, November 6, 2026","timezone":"America/Toronto"}
+{
+  "date": "2026-11-06",
+  "dayLabel": "Friday, November 6, 2026",
+  "timezone": "America/Toronto",
+  "activities": [
+    {
+      "time": "05:00",
+      "station": "desk",
+      "text": "Ran the schedule audit before dawn — Torts on Zoom from home, Contracts makeup at PACI, no conflicts to fix"
+    },
+    {
+      "time": "06:30",
+      "station": "wall",
+      "text": "Posted the George brief for Rheia's Morning Show — a Torts day, hurt-and-who-fixes-it in kid terms"
+    },
+    {
+      "time": "07:00",
+      "station": "wall",
+      "text": "Sent Angie's morning text — Friday shape, two classes, Thunder Bay cold and Ottawa milder"
+    },
+    {
+      "time": "07:48",
+      "station": "desk",
+      "text": "Published the drive-time episode — Rylands and Bazley, who pays when you did nothing wrong"
+    },
+    {
+      "time": "08:20",
+      "station": "library",
+      "text": "Swept the people files — 71 cut down to plain facts, 38 old ancestor files out of the way"
+    },
+    {
+      "time": "09:00",
+      "station": "desk",
+      "text": "Torts on Zoom from home, 9 to noon — strict liability and vicarious liability, exam format landed mid-class"
+    },
+    {
+      "time": "12:00",
+      "station": "kitchen",
+      "text": "Lunch gap — bread and butter, dinner check-in with no plan yet and dumplings quietly winning"
+    },
+    {
+      "time": "13:10",
+      "station": "door",
+      "text": "Out the door to PACI for the Contracts makeup class, 1:30 to 3 — textbook in the bag"
+    },
+    {
+      "time": "15:30",
+      "station": "server",
+      "text": "Back home for a printer test — page came out clean, black reading 100%, colours in the 80s"
+    },
+    {
+      "time": "16:30",
+      "station": "library",
+      "text": "Con Law marathon — ditched the Case Index, added trigger columns, wrote the canned answers, and caught Alford's RJR correction to the 1995 reasons"
+    },
+    {
+      "time": "18:48",
+      "station": "wall",
+      "text": "Evening board updated — Monday's merch deadline up, four new Con Law cases filed in the vault as placeholders"
+    },
+    {
+      "time": "19:15",
+      "station": "kitchen",
+      "text": "Dumplings early from the fridge pack — quick fuel before heading out"
+    },
+    {
+      "time": "20:15",
+      "station": "door",
+      "text": "Out to Adam's for Mario Kart with Colten"
+    },
+    {
+      "time": "21:48",
+      "station": "bed",
+      "text": "Evening wrap — rewrote the house to match the day as it actually happened, then hammock time"
+    }
+  ]
+}
