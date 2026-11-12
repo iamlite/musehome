@@ -173,6 +173,11 @@ const lightingEl = $("lighting");
 let activities = [];
 let simMinutes = 0;
 let playing = false;
+/* Reduced motion: the CSS pass stills the sprite animations, but the
+   ambient JS motion — Bella wandering, the wall screen auto-cycling —
+   runs on timers, so it is held here instead. User-started playback
+   (Play the day, log clicks) still works. */
+const REDUCED_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let speed = 10;
 let currentIdx = -2;
 let sceneStation = "bed";
@@ -434,6 +439,7 @@ const CAT_SPOTS = [
   { x: 9,  y: 63, via: "server" }    /* warm server closet */
 ];
 function catTick(dt) {
+  if (REDUCED_MOTION) return;
   if (catState === "dwell") {
     catTimer -= dt;
     if (catTimer <= 0) {
@@ -582,7 +588,7 @@ function frame(now) {
   requestAnimationFrame(frame);
 }
 setInterval(() => { applyPhase(); updateDashNext(); }, 1500);
-setInterval(cycleDash, 4000);
+if (!REDUCED_MOTION) setInterval(cycleDash, 4000);
 
 /* ---------- Init ---------- */
 function scatter(container, count, cls) {
@@ -607,6 +613,7 @@ function init(data) {
   scatter($("motes"), 22, "mote");
   scatter(skyStarsEl, 36, "");
   cat.pos = { x: 52, y: 31 };
+  if (REDUCED_MOTION) { catNap = true; catEl.classList.add("napping"); }
   catEl.style.left = cat.pos.x + "%";
   catEl.style.top = cat.pos.y + "%";
   jumpToNow(false);
