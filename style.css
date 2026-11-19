@@ -29,9 +29,8 @@ html, body {
   display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
   padding: 16px 28px;
   border-bottom: 1px solid var(--line);
-  background: rgba(10, 12, 26, 0.72);
+  background: #0a0c1a;
   position: sticky; top: 0; z-index: 60;
-  backdrop-filter: blur(6px);
 }
 .brand { display: flex; align-items: center; gap: 14px; }
 .brand-mark { font-size: 30px; color: var(--gold); text-shadow: 0 0 18px rgba(233,199,103,.65); line-height: 1; }
@@ -381,7 +380,9 @@ html, body {
 }
 .st-marker span {
   position: relative; font-size: 9.5px; letter-spacing: 1.4px; text-transform: uppercase;
-  color: rgba(232,230,218,.38); white-space: nowrap;
+  /* .72 alpha keeps the inactive labels at ~6.9:1 or better over the
+     darkest floors; the old .38 measured 2.8–3.1:1 and failed AA. */
+  color: rgba(232,230,218,.72); white-space: nowrap;
   text-shadow: 0 1px 3px rgba(0,0,0,.8);
 }
 .st-marker.active::before {
